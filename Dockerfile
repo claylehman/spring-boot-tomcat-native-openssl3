@@ -17,12 +17,10 @@ RUN cd /usr/src \
  && tar -zxf openssl-3.0.2.tar.gz \
  && rm openssl-3.0.2.tar.gz \
  && cd openssl-3.0.2 \
- && ./config enable-fips && make -j8  && make -j8 install 
+ && ./config && make -j8  && make -j8 install 
 
 RUN ln -s /usr/local/lib/libcrypto.so.3 /usr/lib64/libcrypto.so.3 \
  && ln -s /usr/local/lib/libssl.so.3 /usr/lib64/libssl.so.3
-
-RUN openssl fipsinstall -out /usr/local/ssl/fipsmodule.cnf -module /usr/local/lib/ossl-modules/fips.so
 
 #####
 # Setup Tomcat Native / API binaries
