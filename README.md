@@ -12,7 +12,7 @@ java.lang.UnsatisfiedLinkError: /usr/lib/tcnative/lib/libtcnative-1.so.0.2.32: /
 	at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:388) ~[na:na]
 ```
 
-
+See the Dockerfile for installation and configuration steps for OpenSSL 3.0.2 and Tomcat Native 1.2.32
 
 To run this project locally (need java, and docker installed):
 
@@ -27,3 +27,5 @@ docker build -t tcnative-test .
 
 4) Run docker image
 docker run -it -p8443:8443 tcnative-test /bin/bash
+
+
